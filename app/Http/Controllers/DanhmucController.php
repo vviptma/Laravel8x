@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\DanhmucTruyen;
 
 class DanhmucController extends Controller
 {
@@ -29,18 +30,36 @@ class DanhmucController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate(
+            [
+                'tendanhmuc' => 'required|unique:danhmuc|max:255',
+                'mota' => 'required|max:255',
+                'kichhoat' => 'required'
+            ],
+            [
+                'tendanhmuc.required' => 'Chưa điền tên danh mục',
+                'mota.required' => 'Chưa điền mô tả danh mục',
+            ]
+        );
+//        $data = $request->all();
+//        dd($data);
+        $danhmuctruyen = new DanhmucTruyen();
+        $danhmuctruyen->tendanhmuc = $data['tendanhmuc'];
+        $danhmuctruyen->mota = $data['mota'];
+        $danhmuctruyen->kichhoat = $data['kichhoat'];
+        $danhmuctruyen->save();
+        return redirect()->back()->with('status','Thêm danh mục truyện thành công');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -51,7 +70,7 @@ class DanhmucController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -62,8 +81,8 @@ class DanhmucController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -74,7 +93,7 @@ class DanhmucController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
