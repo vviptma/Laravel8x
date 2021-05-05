@@ -26,11 +26,13 @@
                             @csrf
                             <div class="form-group">
                                 <label for="tendanhmuc">Tên danh mục</label>
-                                <input type="text" class="form-control" name="tendanhmuc" id="tendanhmuc" placeholder="Tên danh mục">
+                                <input type="text" class="form-control" value="{{old('tendanhmuc')}}" name="tendanhmuc"
+                                       id="tendanhmuc" placeholder="Tên danh mục">
                             </div>
                             <div class="form-group">
                                 <label for="mota">Mô tả danh mục</label>
-                                <input type="text" class="form-control" name="mota" id="mota" placeholder="Mô tả danh mục">
+                                <input type="text" class="form-control" value="{{old('mota')}}" name="mota" id="mota"
+                                       placeholder="Mô tả danh mục">
                             </div>
                             <div class="form-group">
                                 <label for="kichhoat">Kích hoạt</label>
