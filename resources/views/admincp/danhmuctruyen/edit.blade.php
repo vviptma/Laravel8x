@@ -31,6 +31,11 @@
                                        name="tendanhmuc" id="tendanhmuc" placeholder="Tên danh mục">
                             </div>
                             <div class="form-group">
+                                <label for="slug_danhmuc">Slug danh mục</label>
+                                <input type="text" class="form-control" value="{{$danhmuc->slug_danhmuc}}" name="slug_danhmuc"
+                                       id="slug_danhmuc" placeholder="Slug">
+                            </div>
+                            <div class="form-group">
                                 <label for="mota">Mô tả danh mục</label>
                                 <input type="text" class="form-control" value="{{$danhmuc->mota}}" name="mota" id="mota"
                                        placeholder="Mô tả danh mục">
@@ -39,12 +44,12 @@
                                 <label for="kichhoat">Kích hoạt</label>
                                 <select name="kichhoat" class="custom-select">
                                     <option selected>Lựa chọn...</option>
-                                    @if($danhmuc->kichhoat==1)
-                                        <option selected value="1">Kích hoạt</option>
-                                        <option value="0">Không kích hoạt</option>
+                                    @if($danhmuc->kichhoat==0)
+                                        <option selected value="0">Kích hoạt</option>
+                                        <option value="1">Không kích hoạt</option>
                                     @else
-                                        <option value="1">Kích hoạt</option>
-                                        <option selected value="0">Không kích hoạt</option>
+                                        <option value="0">Kích hoạt</option>
+                                        <option selected value="1">Không kích hoạt</option>
                                     @endif
                                 </select>
                             </div>

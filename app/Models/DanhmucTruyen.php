@@ -12,6 +12,7 @@ class DanhmucTruyen extends Model
     public $timestamps = false;
     protected $fillable = [
         'tendanhmuc',
+        'slug_danhmuc',
         'mota',
         'kichhoat'
     ];

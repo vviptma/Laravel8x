@@ -30,6 +30,11 @@
                                        id="tendanhmuc" placeholder="Tên danh mục">
                             </div>
                             <div class="form-group">
+                                <label for="slug_danhmuc">Slug danh mục</label>
+                                <input type="text" class="form-control" value="{{old('slug_danhmuc')}}" name="slug_danhmuc"
+                                       id="slug_danhmuc" placeholder="Slug">
+                            </div>
+                            <div class="form-group">
                                 <label for="mota">Mô tả danh mục</label>
                                 <input type="text" class="form-control" value="{{old('mota')}}" name="mota" id="mota"
                                        placeholder="Mô tả danh mục">
@@ -38,8 +43,8 @@
                                 <label for="kichhoat">Kích hoạt</label>
                                 <select name="kichhoat" class="custom-select">
                                     <option selected>Lựa chọn...</option>
-                                    <option value="1">Kích hoạt</option>
-                                    <option value="0">Không kích hoạt</option>
+                                    <option value="0">Kích hoạt</option>
+                                    <option value="1">Không kích hoạt</option>
                                 </select>
                             </div>
                             <button type="submit" name="themdanhmuc" class="btn btn-primary">Thêm danh mục</button>
