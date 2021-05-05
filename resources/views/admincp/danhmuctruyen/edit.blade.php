@@ -28,13 +28,13 @@
                             <div class="form-group">
                                 <label for="tendanhmuc">Tên danh mục</label>
                                 <input type="text" class="form-control" value="{{$danhmuc->tendanhmuc}}"
-                                       name="tendanhmuc" id="tendanhmuc" placeholder="Tên danh mục">
+                                       name="tendanhmuc" id="tendanhmuc" onkeyup="ConvertNameToSlug();" placeholder="Tên danh mục">
                             </div>
-                            <div class="form-group">
-                                <label for="slug_danhmuc">Slug danh mục</label>
-                                <input type="text" class="form-control" value="{{$danhmuc->slug_danhmuc}}" name="slug_danhmuc"
-                                       id="slug_danhmuc" placeholder="Slug">
-                            </div>
+                                <div class="form-group">
+                                    <label for="slug_danhmuc">Slug danh mục</label>
+                                    <input type="text" class="form-control" value="{{$danhmuc->slug_danhmuc}}" name="slug_danhmuc"
+                                           id="slug_danhmuc" placeholder="Slug">
+                                </div>
                             <div class="form-group">
                                 <label for="mota">Mô tả danh mục</label>
                                 <input type="text" class="form-control" value="{{$danhmuc->mota}}" name="mota" id="mota"

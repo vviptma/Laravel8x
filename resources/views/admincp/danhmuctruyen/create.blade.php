@@ -26,7 +26,7 @@
                             @csrf
                             <div class="form-group">
                                 <label for="tendanhmuc">Tên danh mục</label>
-                                <input type="text" class="form-control" value="{{old('tendanhmuc')}}" name="tendanhmuc"
+                                <input type="text" class="form-control" value="{{old('tendanhmuc')}}" onkeyup="ConvertNameToSlug();" name="tendanhmuc"
                                        id="tendanhmuc" placeholder="Tên danh mục">
                             </div>
                             <div class="form-group">
