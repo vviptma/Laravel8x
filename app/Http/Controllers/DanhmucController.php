@@ -14,7 +14,8 @@ class DanhmucController extends Controller
      */
     public function index()
     {
-        return view('admincp.danhmuctruyen.index');
+        $danhmuctruyen = DanhmucTruyen::orderBy('id','DESC')->get();
+        return view('admincp.danhmuctruyen.index')->with(compact('danhmuctruyen'));
     }
 
     /**
@@ -98,7 +99,8 @@ class DanhmucController extends Controller
      */
     public function destroy($id)
     {
-        //
+//        DanhmucTruyen::find($id)->delete();
+//        return redirect()->back()->with('status','Xóa danh mục truyện thành công!');
     }
 
 }

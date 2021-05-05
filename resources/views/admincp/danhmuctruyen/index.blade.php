@@ -7,13 +7,54 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">Hiển thị Danh Mục Truyệń</div>
-
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     <div class="card-body">
                         @if (session('status'))
                             <div class="alert alert-success" role="alert">
                                 {{ session('status') }}
                             </div>
                         @endif
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Tên danh mục</th>
+                                <th scope="col">Mô tả danh mục</th>
+                                <th scope="col">Kích hoạt</th>
+                                <th scope="col">Quản lý</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($danhmuctruyen as $key => $danhmuc)
+                                <tr>
+                                    <th scope="row">{{$key}}</th>
+                                    <td>{{$danhmuc->tendanhmuc}}</td>
+                                    <td>{{$danhmuc->mota}}</td>
+                                    <td>@if($danhmuc->kichhoat==0)
+                                            <span class="text text-success">Kích hoạt</span>
+                                        @else
+                                            <span class="text text-danger">Không Kích hoạt</span>
+                                        @endif
+                                    </td>
+                                    <td>
+                                        <form action="{{route('danhmuc.destroy',['danhmuc => $danhmuc->id'])}}" method="POST">
+{{--                                            @method('DELETE')--}}
+                                            @csrf
+                                            <button onclick="return confirm('Bạn chắc chắn muốn xóa danh mục truyện này ư?');" class="btn btn-danger">DELETE</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
