@@ -4,7 +4,7 @@
     @include('layouts.nav')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">Hiển thị Danh Mục Truyệń</div>
                     @if ($errors->any())
@@ -30,8 +30,8 @@
                                 <th scope="col">Mô tả danh mục</th>
                                 <th scope="col">Slug danh mục</th>
                                 <th scope="col">Kích hoạt</th>
-                                <th scope="col">Action</th>
-                                <th scope="col">Action</th>
+                                <th scope="col">Chức năng</th>
+                                <th scope="col">Chức năng</th>
                             </tr>
                             </thead>
                             <tbody>
