@@ -17,7 +17,7 @@ class TruyenController extends Controller
     public function index()
     {
         $danhmuc = DanhmucTruyen::orderBy('id','DESC')->get();
-        $dstruyen = Truyen::with('danhmuctruyen')->orderBy('id', 'DESC')->get();;
+        $dstruyen = Truyen::with('danhmuctruyen')->orderBy('id', 'DESC')->get();
         return view('admincp.truyen.index')->with(compact('dstruyen','danhmuc'));
     }
 

@@ -25,4 +25,8 @@ class Truyen extends Model
     public function danhmuctruyen(){
         return $this->belongsTo('App\Models\DanhmucTruyen','danhmuc_id');
     }
+
+    public function chapter(){
+        return $this->hasMany('App\Models\Chapter',);
+    }
 }
