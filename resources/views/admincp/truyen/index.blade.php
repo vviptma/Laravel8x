@@ -44,11 +44,15 @@
                                     <td>{{$truyen->tentruyen}}</td>
                                     <td>{{$truyen->tomtat}}</td>
                                     <td>{{$truyen->slug_truyen}}</td>
-                                    <td>{{$truyen->danhmuc_id}}</td>
+
+                                    {{--Hiển thị id danh mục--}}
+                                    <td>{{$truyen->danhmuctruyen->tendanhmuc}}</td>
+
+
                                     <td>@if($truyen->kichhoat==0)
-                                            <span class="text text-danger">Kích hoạt</span>
+                                            <span class="text text-success">Kích hoạt</span>
                                         @else
-                                            <span class="text text-success">Không Kích hoạt</span>
+                                            <span class="text text-danger">Không Kích hoạt</span>
                                         @endif
                                     </td>
                                     <td>

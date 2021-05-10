@@ -6,7 +6,7 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">Hiển thị Danh Mục Truyệń</div>
+                    <div class="card-header">Hiển thị danh mục truyện</div>
                     @if ($errors->any())
                         <div class="alert alert-danger">
                             <ul>
@@ -42,9 +42,9 @@
                                     <td>{{$danhmuc->slug_danhmuc}}</td>
                                     <td>{{$danhmuc->mota}}</td>
                                     <td>@if($danhmuc->kichhoat==0)
-                                            <span class="text text-danger">Kích hoạt</span>
+                                            <span class="text text-success">Kích hoạt</span>
                                         @else
-                                            <span class="text text-success">Không Kích hoạt</span>
+                                            <span class="text text-danger">Không Kích hoạt</span>
                                         @endif
                                     </td>
                                     <td>
