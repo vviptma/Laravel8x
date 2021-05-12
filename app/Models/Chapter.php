@@ -23,6 +23,6 @@ class Chapter extends Model
     protected $table = 'chapter';
 
     public function danhsachtruyen(){
-        return $this->belongsTo('App\Models\Truyen','truyen_id');
+        return $this->belongsTo('App\Models\Truyen','truyen_id', 'id');
     }
 }

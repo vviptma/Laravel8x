@@ -104,11 +104,14 @@ class DanhmucController extends Controller
                 'mota.required' => 'Chưa điền mô tả danh mục',
             ]
         );
+        //Gán dữ liệu
         $danhmuctruyen = DanhmucTruyen::find($id);
         $danhmuctruyen->tendanhmuc = $data['tendanhmuc'];
         $danhmuctruyen->slug_danhmuc = $data['slug_danhmuc'];
         $danhmuctruyen->mota = $data['mota'];
         $danhmuctruyen->kichhoat = $data['kichhoat'];
+
+        //Thực hiện lưu
         $danhmuctruyen->save();
         return redirect()->back()->with('status', 'Cập nhật danh mục truyện thành công');
     }

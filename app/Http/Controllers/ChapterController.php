@@ -16,9 +16,8 @@ class ChapterController extends Controller
      */
     public function index()
     {
-        $truyen = Truyen::orderBy('id','DESC')->get();
         $dschapter = Chapter::with('danhsachtruyen')->orderBy('id', 'DESC')->get();
-        return view('admincp.chapter.index')->with(compact('dschapter','truyen'));
+        return view('admincp.chapter.index')->with(compact('dschapter'));
     }
 
     /**
@@ -124,7 +123,7 @@ class ChapterController extends Controller
             ]
         );
 
-        //Đưa dữ liệu từ request form vào Models
+        //Gán dữ liệu
         $chapter = Chapter::find($id);
         $chapter->truyen_id = $data['truyen_id'];
         $chapter->tieude = $data['tieude'];
