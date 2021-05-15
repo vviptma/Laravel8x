@@ -12,6 +12,31 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+        <style>
+            .owl-prev {
+                width: 25px;
+                position: absolute;
+                top: 40%;
+                margin-left: 10px !important;
+                display: block !important;
+                border:0px solid black;
+            }
+
+            .owl-next {
+                width: 25px;
+                position: absolute;
+                top: 40%;
+                right: 5px;
+                display: block !important;
+                border:0px solid black;
+            }
+            .owl-prev i, .owl-next i {transform : scale(5,6); color: #ccc;}
+            .owl-theme .owl-nav [class*=owl-]:hover{
+                background: #00000000;
+            }
+        </style>
     </head>
     <body>
     <div class="container" >
@@ -52,19 +77,138 @@
             </div>
         </nav>
         <!----- Slide ----->
-        <div class="owl-carousel owl-theme">
-            <div class="item"><img src="{{asset('public/uploads/truyen/conan91.jpg')}}"></div>
-            <div class="item"><img src="{{asset('public/uploads/truyen/conan91.jpg')}}"></div>
-            <div class="item"><img src="{{asset('public/uploads/truyen/conan91.jpg')}}"></div>
-            <div class="item"><img src="{{asset('public/uploads/truyen/conan91.jpg')}}"></div>
-            <div class="item"><img src="{{asset('public/uploads/truyen/conan91.jpg')}}"></div>
-            <div class="item"><img src="{{asset('public/uploads/truyen/conan91.jpg')}}"></div>
-            <div class="item"><img src="{{asset('public/uploads/truyen/conan91.jpg')}}"></div>
-            <div class="item"><img src="{{asset('public/uploads/truyen/conan91.jpg')}}"></div>
-            <div class="item"><img src="{{asset('public/uploads/truyen/conan91.jpg')}}"></div>
-            <div class="item"><img src="{{asset('public/uploads/truyen/conan91.jpg')}}"></div>
-            <div class="item"><img src="{{asset('public/uploads/truyen/conan91.jpg')}}"></div>
+        <h3>SÁCH HAY NÊN ĐỌC</h3>
+
+        <div class="owl-carousel owl-theme mt-5">
+            <div class="item">
+                <img src="{{asset('public/uploads/truyen/conan91.jpg')}}">
+                <h5>Conan Tập 1</h5>
+                <p><i class="fas fa-eye"></i> 0 lượt xem</p>
+            </div>
+            <div class="item">
+                <img src="{{asset('public/uploads/truyen/conan91.jpg')}}">
+                <h5>Conan Tập 1</h5>
+                <p><i class="fas fa-eye"></i> 0 lượt xem</p>
+            </div>
+            <div class="item">
+                <img src="{{asset('public/uploads/truyen/conan91.jpg')}}">
+                <h5>Conan Tập 1</h5>
+                <p><i class="fas fa-eye"></i> 0 lượt xem</p>
+            </div>
+            <div class="item">
+                <img src="{{asset('public/uploads/truyen/conan91.jpg')}}">
+                <h5>Conan Tập 1</h5>
+                <p><i class="fas fa-eye"></i> 0 lượt xem</p>
+            </div>
+            <div class="item">
+                <img src="{{asset('public/uploads/truyen/conan91.jpg')}}">
+                <h5>Conan Tập 1</h5>
+                <p><i class="fas fa-eye"></i> 0 lượt xem</p>
+            </div>
+            <div class="item">
+                <img src="{{asset('public/uploads/truyen/conan91.jpg')}}">
+                <h5>Conan Tập 1</h5>
+                <p><i class="fas fa-eye"></i> 0 lượt xem</p>
+            </div>
+            <div class="item">
+                <img src="{{asset('public/uploads/truyen/conan91.jpg')}}">
+                <h5>Conan Tập 1</h5>
+                <p><i class="fas fa-eye"></i> 0 lượt xem</p>
+            </div>
         </div>
+        <!----- SÁCH MỚI CẬP NHẬT ----->
+        <h3>SÁCH MỚI CẬP NHẬT</h3>
+        <div class="album py-5 bg-light">
+            <div class="container">
+
+                <div class="row">
+                    <?php
+                    for($i = 1;$i < 5 ; $i++): ?>
+                        <div class="col-md-3">
+                            <div class="card mb-3 box-shadow">
+                                <img class="card-img-top" src="{{asset('public/uploads/truyen/conan91.jpg')}}" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-text">Detective conan</h5>
+                                    <p class="card-text">Truyện conan là truyện hay nhất hệ mặt trời :)</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-sm btn-outline-secondary">Đọc ngay</button>
+                                            <button type="button" class="btn btn-sm btn-outline-secondary">0 lượt xem</button>
+                                        </div>
+                                        <small class="text-muted">9 mins</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endfor; ?>
+
+                </div>
+                <a class="btn btn-success" href="">Xem tất cả</a>
+            </div>
+        </div>
+
+        <!-----SÁCH HAY XEM NHIỀU----->
+        <h3>SÁCH HAY XEM NHIỀU</h3>
+        <div class="album py-5 bg-light">
+            <div class="container">
+
+                <div class="row">
+                    <?php
+                    for($i = 1;$i < 5 ; $i++): ?>
+                    <div class="col-md-3">
+                        <div class="card mb-3 box-shadow">
+                            <img class="card-img-top" src="{{asset('public/uploads/truyen/conan91.jpg')}}" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-text">Detective conan</h5>
+                                <p class="card-text">Truyện conan là truyện hay nhất hệ mặt trời :)</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">Đọc ngay</button>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">0 lượt xem</button>
+                                    </div>
+                                    <small class="text-muted">9 mins</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <?php endfor; ?>
+
+                </div>
+                <a class="btn btn-success" href="">Xem tất cả</a>
+            </div>
+        </div>
+
+        <!-----Blogs----->
+        <h3>BLOGS</h3>
+        <div class="album py-5 bg-light">
+            <div class="container">
+
+                <div class="row">
+                    <?php
+                    for($i = 1;$i < 5 ; $i++): ?>
+                    <div class="col-md-3">
+                        <div class="card mb-3 box-shadow">
+                            <img class="card-img-top" src="{{asset('public/uploads/truyen/conan91.jpg')}}" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-text">Detective conan</h5>
+                                <p class="card-text">Truyện conan là truyện hay nhất hệ mặt trời :)</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">Đọc ngay</button>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">0 lượt xem</button>
+                                    </div>
+                                    <small class="text-muted">9 mins</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <?php endfor; ?>
+
+                </div>
+                <a class="btn btn-success" href="">Xem tất cả</a>
+            </div>
+        </div>
+
     </div>
 
     <!-- Get app.js to add Boostrap -->
@@ -78,9 +222,10 @@
         <script type=text/javascript>
             $('.owl-carousel').owlCarousel({
                 loop:true,
-                dots:true,
+                dots:false,
+                nav:true,
                 margin:10,
-                nav:false,
+                navText : ['<i class="fa fa-angle-left" aria-hidden="true"></i>','<i class="fa fa-angle-right" aria-hidden="true"></i>'],
                 responsive:{
                     0:{
                         items:1
