@@ -19,9 +19,8 @@ use App\Http\Controllers\ChapterController;
 */
 Auth::routes();
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
-
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+//HomePage
+Route::get('/', [HomeController::class, 'index'])->name('layout');
 
 Route::resource('/danhmuc', DanhmucController::class);
 
