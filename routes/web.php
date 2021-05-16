@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DanhmucController;
 use App\Http\Controllers\TruyenController;
 use App\Http\Controllers\ChapterController;
+use App\Http\Controllers\IndexController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,10 +18,18 @@ use App\Http\Controllers\ChapterController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', [IndexController::class, 'home']);
+
 Auth::routes();
 
 //HomePage
-Route::get('/', [HomeController::class, 'index'])->name('layout');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+//Doc truyen
+Route::get('/doctruyen/{id}',[IndexController::class, 'doctruyen'])->name('doctruyen');
+
+
+//Admin
 
 Route::resource('/danhmuc', DanhmucController::class);
 
