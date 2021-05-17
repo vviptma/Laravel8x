@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DanhmucController;
 use App\Http\Controllers\TruyenController;
 use App\Http\Controllers\ChapterController;
@@ -18,22 +18,27 @@ use App\Http\Controllers\IndexController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', [IndexController::class, 'home']);
+
 
 Auth::routes();
 
-//HomePage
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+//User Page
+Route::get('/', [IndexController::class, 'home']);
 
-//Doc truyen
-Route::get('/doctruyen/{id}',[IndexController::class, 'doctruyen'])->name('doctruyen');
+Route::get('danhmuc/{slug_danhmuc}',[IndexController::class, 'showInfoDanhMuc']);
+
+Route::get('truyen/{slug_truyen}',[IndexController::class, 'showInfoTruyen']);
+
+Route::get('chapter/{slug_chapter}',[IndexController::class, 'showInfoChapter']);
 
 
-//Admin
+//Group Admin
+Route::group(['prefix' => 'admin'], function() {
+    Route::get('/', [AdminController::class, 'index'])->name('admin');
 
-Route::resource('/danhmuc', DanhmucController::class);
+    Route::resource('danhmuc', DanhmucController::class , ['except' => ['show']]);
 
-Route::resource('/truyen', TruyenController::class);
+    Route::resource('truyen', TruyenController::class, ['except' => ['show']]);
 
-Route::resource('/chapter', ChapterController::class);
-
+    Route::resource('chapter', ChapterController::class, ['except' => ['show']]);
+});

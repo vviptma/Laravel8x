@@ -1,4 +1,16 @@
 <div class="">
+    {{--THỂ LOẠI TRUYỆN--}}
+    <div class="clearfix">
+        <h5>THỂ LOẠI TRUYỆN</h5>
+        <div class="row">
+            @foreach($dsdanhmuc as $key => $danhmuc)
+            <div class="col-6">
+                <i class="fas fa-bookmark"></i> <a href="{{$danhmuc->slug_danhmuc}}">{{$danhmuc->tendanhmuc}}</a>
+            </div>
+            @endforeach
+        </div>
+    </div>
+    <hr>
     {{--CÙNG THỂ LOẠI--}}
     <div class="">
         <h5>10 TRUYỆN CÙNG THỂ LOẠI</h5>
@@ -135,18 +147,5 @@
             </ul>
         </div>
         <button class="btn btn-success">Xem thêm</button>
-    </div>
-    <hr>
-    {{--THỂ LOẠI TRUYỆN--}}
-    <div class="clearfix">
-        <h5>10 TRUYỆN FULL</h5>
-        <div class="row">
-            <?php
-            for ($i = 1; $i <15 ;$i++):?>
-            <div class="col-6">
-                20 danh mục
-            </div>
-            <?php endfor; ?>
-        </div>
     </div>
 </div>

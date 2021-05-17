@@ -1,14 +1,11 @@
-<h3>SÁCH HAY NÊN ĐỌC</h3>
-
 <div class="owl-carousel owl-theme mt-5">
-    <?php
-    for($i = 1;$i < 5 ; $i++): ?>
+    @foreach($dstruyen as $key => $truyen)
     <div class="item">
-        <a href="{{asset('doctruyen/5')}}">
-        <img src="{{asset('public/uploads/truyen/conan91.jpg')}}">
+        <a href="{{url('truyen/'.$truyen->slug_truyen)}}">
+        <img src="{{asset('public/uploads/truyen/'.$truyen->hinhanh)}}">
         </a>
-        <h5>Conan Tập 1</h5>
-        <p><i class="fas fa-eye"></i> 0 lượt xem</p>
+        <h5>{{$truyen->tentruyen}}</h5>
+        <p><i class="fas fa-eye"></i>{{$truyen->danhmuctruyen->tendanhmuc}}</p>
     </div>
-    <?php endfor; ?>
+    @endforeach
 </div>

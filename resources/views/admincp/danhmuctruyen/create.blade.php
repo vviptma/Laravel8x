@@ -42,8 +42,8 @@
                             <div class="form-group">
                                 <label for="kichhoat">Kích hoạt</label>
                                 <select name="kichhoat" class="custom-select" required>
-                                    <option value="" selected>Lựa chọn...</option>
-                                    <option value="0">Kích hoạt</option>
+                                    <option value="">Lựa chọn...</option>
+                                    <option value="0" selected>Kích hoạt</option>
                                     <option value="1">Không kích hoạt</option>
                                 </select>
                             </div>
