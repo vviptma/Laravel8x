@@ -43,6 +43,7 @@ class TruyenController extends Controller
         $data = $request->validate(
             [
                 'tentruyen' => 'required|unique:truyen|max:255',
+                'tacgia' => 'required|max:200',
                 'slug_truyen' => 'required|unique:truyen|max:255',
                 'hinhanh' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048|dimensions:min_width=100,min_height=100,max_width=1000,max_height=1000',
                 'tomtat' => 'required',
@@ -52,6 +53,7 @@ class TruyenController extends Controller
             [
                 'tentruyen.unique' => 'Tên truyện đã có, xin điền tên khác',
                 'tentruyen.required' => 'Chưa điền tên truyện',
+                'tacgia.required' => 'Chưa điền tác giả',
                 'slug_truyen.unique' => 'Hãy điền slug truyện khác',
                 'slug_truyen.required' => 'Chưa điền slug truyện',
                 'tomtat.required' => 'Chưa điền tóm tắt truyện',
@@ -61,6 +63,7 @@ class TruyenController extends Controller
         //Đưa dữ liệu từ request form vào Models
         $truyen = new Truyen();
         $truyen->tentruyen = $data['tentruyen'];
+        $truyen->tacgia = $data['tacgia'];
         $truyen->slug_truyen = $data['slug_truyen'];
         $truyen->tomtat = $data['tomtat'];
         $truyen->danhmuc_id = $data['danhmuc'];
@@ -125,6 +128,7 @@ class TruyenController extends Controller
         $data = $request->validate(
             [
                 'tentruyen' => 'required|max:255',
+                'tacgia' => 'required|max:200',
                 'slug_truyen' => 'required|max:255',
                 'tomtat' => 'required',
                 'danhmuc' =>'required',
@@ -132,6 +136,7 @@ class TruyenController extends Controller
             ],
             [
                 'tentruyen.required' => 'Chưa điền tên truyện',
+                'tacgia.required' => 'Chưa điền tên tác giả',
                 'slug_truyen.required' => 'Chưa điền slug truyện',
                 'tomtat.required' => 'Chưa điền tóm tắt truyện',
             ]
@@ -139,10 +144,12 @@ class TruyenController extends Controller
         //Đưa dữ liệu từ request form vào Models
         $truyen = Truyen::find($id);
         $truyen->tentruyen = $data['tentruyen'];
+        $truyen->tacgia = $data['tacgia'];
         $truyen->slug_truyen = $data['slug_truyen'];
         $truyen->tomtat = $data['tomtat'];
         $truyen->danhmuc_id = $data['danhmuc'];
         $truyen->kichhoat = $data['kichhoat'];
+        $truyen->touch();
 
         //Lấy request hình ảnh
         $get_image = $request->hinhanh;

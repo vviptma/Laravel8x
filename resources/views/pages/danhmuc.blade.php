@@ -11,9 +11,9 @@
 @section('content')
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Library</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Data</li>
+            <li class="breadcrumb-item"><a href="{{route('index')}}">Trang chủ</a></li>
+            <li class="breadcrumb-item active text-success">{{$info_danhmuc->tendanhmuc}}
+            </li>
         </ol>
     </nav>
 
@@ -25,7 +25,7 @@
                 <ul class="list-unstyled">
                     <li class="media border-bottom">
                         <a href="{{url('truyen/'.$truyen->slug_truyen)}}">
-                            <img class="mr-3" width="50" height="auto"
+                            <img class="mr-3" width="100" height="auto"
                                  src="{{asset('public/uploads/truyen/'.$truyen->hinhanh)}}" alt="...">
                         </a>
                         <div class="media-body">
@@ -33,7 +33,7 @@
                                 <h5 class="card-title">{{$truyen->tentruyen}}</h5>
                             </a>
                             <p><i class="fa fa-user"></i>{{$truyen->tomtat}}</p>
-                            <p><i class="fas fa-bookmark"></i>{{$truyen->danhmuctruyen->tendanhmuc}}</p>
+{{--                            <p><i class="fas fa-bookmark"></i>{{$truyen->danhmuctruyen->tendanhmuc}}</p>--}}
                         </div>
                     </li>
                 </ul>

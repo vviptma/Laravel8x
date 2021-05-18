@@ -1,20 +1,23 @@
 <div class="">
     {{--THỂ LOẠI TRUYỆN--}}
-    <div class="clearfix">
-        <h5>THỂ LOẠI TRUYỆN</h5>
-        <div class="row">
-            @foreach($dsdanhmuc as $key => $danhmuc)
-            <div class="col-6">
-                <i class="fas fa-bookmark"></i> <a href="{{$danhmuc->slug_danhmuc}}">{{$danhmuc->tendanhmuc}}</a>
+    <div class="card mb-3">
+        <div class="card-header bg-transparent"><h5>THỂ LOẠI TRUYỆN</h5></div>
+        <div class="card-body">
+            <div class="row">
+                @foreach($dsdanhmuc as $key => $danhmuc)
+                    <div class="col-6">
+                        <i class="fas fa-bookmark"></i>
+                        <a href="{{url('danhmuc/'.$danhmuc->slug_danhmuc)}}">{{$danhmuc->tendanhmuc}}</a>
+                    </div>
+                @endforeach
             </div>
-            @endforeach
         </div>
     </div>
     <hr>
     {{--CÙNG THỂ LOẠI--}}
-    <div class="">
-        <h5>10 TRUYỆN CÙNG THỂ LOẠI</h5>
-        <div class="">
+    <div class="card mb-3">
+        <div class="card-header bg-transparent"><h5>10 TRUYỆN CÙNG THỂ LOẠI</h5></div>
+        <div class="card-body">
             <ul class="list-unstyled">
                 <li class="media">
                     <img src="http://laravel-webtruyen.test/public/uploads/truyen/conan91.jpg" class="mr-3" alt="..."
@@ -42,15 +45,15 @@
                 </li>
             </ul>
         </div>
-        <button class="btn btn-success">Xem thêm</button>
+        <div class="card-footer bg-transparent text-center"><button class="btn btn-success">Xem thêm</button></div>
     </div>
     <hr>
     {{--BANNER QUẢNG CÁO--}}
 
     {{--REVIEW TRUYỆN--}}
-    <div class="">
-        <h5>5 REVIEW TRUYỆN</h5>
-        <div class="">
+    <div class="card mb-3">
+        <div class="card-header bg-transparent"><h5>REVIEW TRUYỆN</h5></div>
+        <div class="card-body">
             <ul class="list-unstyled">
                 <li class="media">
                     <img src="http://laravel-webtruyen.test/public/uploads/truyen/conan91.jpg" class="mr-3" alt="..."
@@ -78,13 +81,13 @@
                 </li>
             </ul>
         </div>
-        <button class="btn btn-success">Xem thêm</button>
+        <div class="card-footer bg-transparent text-center"><button class="btn btn-success">Xem thêm</button></div>
     </div>
     <hr>
-    {{--TRUYỆN MỚI--}}
-    <div class="">
-        <h5>10 TRUYỆN MỚI</h5>
-        <div class="">
+    {{--10 TRUYỆN MỚI--}}
+    <div class="card mb-3">
+        <div class="card-header bg-transparent"><h5>10 TRUYỆN MỚI</h5></div>
+        <div class="card-body">
             <ul class="list-unstyled">
                 <li class="media">
                     <img src="http://laravel-webtruyen.test/public/uploads/truyen/conan91.jpg" class="mr-3" alt="..."
@@ -112,13 +115,13 @@
                 </li>
             </ul>
         </div>
-        <button class="btn btn-success">Xem thêm</button>
+        <div class="card-footer bg-transparent text-center"><button class="btn btn-success">Xem thêm</button></div>
     </div>
     <hr>
     {{--TRUYỆN FULL--}}
-    <div class="">
-        <h5>10 TRUYỆN FULL</h5>
-        <div class="">
+    <div class="card mb-3">
+        <div class="card-header bg-transparent"><h5>10 TRUYỆN FULL</h5></div>
+        <div class="card-body">
             <ul class="list-unstyled">
                 <li class="media">
                     <img src="http://laravel-webtruyen.test/public/uploads/truyen/conan91.jpg" class="mr-3" alt="..."
@@ -146,6 +149,7 @@
                 </li>
             </ul>
         </div>
-        <button class="btn btn-success">Xem thêm</button>
+        <div class="card-footer bg-transparent text-center"><button class="btn btn-success">Xem thêm</button></div>
     </div>
+    <hr>
 </div>

@@ -25,13 +25,13 @@
                         <table class="table table-bordered">
                             <thead>
                             <tr>
-                                <th scope="col">#</th>
+                                <th scope="col">ID</th>
                                 <th scope="col">Hình ảnh</th>
                                 <th scope="col">Tên truyện</th>
-                                <th scope="col">Tóm tắt truyện</th>
-                                <th scope="col">Slug truyện</th>
+                                <th scope="col">Tác giả</th>
                                 <th scope="col">Danh mục</th>
                                 <th scope="col">Kích hoạt</th>
+                                <th scope="col">Updated At</th>
                                 <th scope="col">Chức năng</th>
                                 <th scope="col">Chức năng</th>
                             </tr>
@@ -39,11 +39,10 @@
                             <tbody>
                             @foreach($dstruyen as $key => $truyen)
                                 <tr>
-                                    <th scope="row">{{$key}}</th>
+                                    <th scope="row">#{{$truyen->id}}</th>
                                     <td><img src="{{asset('public/uploads/truyen/'.$truyen->hinhanh)}}" height="150" width="auto"></td>
                                     <td>{{$truyen->tentruyen}}</td>
-                                    <td>{{$truyen->tomtat}}</td>
-                                    <td>{{$truyen->slug_truyen}}</td>
+                                    <td>{{$truyen->tacgia}}</td>
 
                                     {{--Hiển thị id danh mục--}}
                                     <td>{{$truyen->danhmuctruyen->tendanhmuc}}</td>
@@ -55,6 +54,7 @@
                                             <span class="text text-danger">Không Kích hoạt</span>
                                         @endif
                                     </td>
+                                    <td><small>{{$truyen->updated_at}}</small></td>
                                     <td>
                                         <a href="{{route('truyen.edit',[$truyen->id])}}" class="btn btn-primary">Edit</a>
                                     </td>

@@ -14,10 +14,10 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <div class="container">
-                        <div class="row" style="width: 300px">
+                        <div class="row" style="width: 340px">
                             @foreach($dsdanhmuc as $key => $danhmuc)
-                                <div class="col-md-6">
-                                        <a class="" href="{{url('danhmuc/'.$danhmuc->slug_danhmuc)}}">{{$danhmuc->tendanhmuc}}</a>
+                                <div class="col-md-6 col-6">
+                                        <a class="text-dark" href="{{url('danhmuc/'.$danhmuc->slug_danhmuc)}}"><i class="fas fa-bookmark"></i> {{$danhmuc->tendanhmuc}}</a>
                                 </div>
                             @endforeach
                         </div>
@@ -28,13 +28,12 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Thể loại
+                    Admin
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Another</a>
-                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="{{route('admin')}}">Admin</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                    <a class="dropdown-item" href="{{route('admin').'/danhmuc'}}">Admin</a>
                 </div>
             </li>
         </ul>

@@ -14,7 +14,7 @@
         <div class="">
 
             <div class="row">
-                @foreach($dstruyen as $key => $truyen)
+                @foreach($dstruyenmoi as $key => $truyen)
                     <div class="col-md-3">
                         <div class="card mb-3 box-shadow">
                             <a href="{{url('truyen/'.$truyen->slug_truyen)}}">
@@ -24,7 +24,7 @@
                                 <h5 class="card-text"><a
                                         href="{{url('truyen/'.$truyen->slug_truyen)}}">{{$truyen->tentruyen}}</a>
                                 </h5>
-                                <small class="card-text">{{$truyen->tomtat}}</small>
+                                <small class="card-text">{{$truyen->danhmuctruyen->tendanhmuc}}</small>
                             </div>
                         </div>
                     </div>

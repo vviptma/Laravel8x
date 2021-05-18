@@ -18,6 +18,42 @@
         html {
             scroll-behavior: smooth;
         }
+        #story-detail .infor p i {
+            width: 20px;
+        }
+        #story-detail .infor p {
+            margin: 0;
+            line-height: 1.5;
+            display: flex;
+        }
+
+        .card-slide {
+            position: relative;
+            max-width: 300px;
+        }
+
+        .card-img-top-slide {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .card-body-slide {
+            position: absolute;
+            bottom: 0;
+            background: rgb(0, 0, 0);
+            background: rgba(0, 0, 0, 0.5); /* Black see-through */
+            color: #f1f1f1;
+            width: 100%;
+            transition: .5s ease;
+            opacity:1;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        i.fa, i.fas {
+            width: 18px;
+        }
     </style>
 </head>
 <body>
@@ -55,22 +91,21 @@
 <script type=text/javascript>
     $('.owl-carousel').owlCarousel({
         autoplay:true,
-        autoplayTimeout:500,
+        autoplayTimeout: 3000,
         autoplayHoverPause:false,
         loop: true,
         dots: false,
         nav: false,
-        margin: 10,
-        navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+        margin: 15,
         responsive: {
             0: {
-                items: 1
+                items: 2
             },
             600: {
-                items: 3
+                items: 2
             },
             1000: {
-                items: 5
+                items: 3
             }
         }
     })

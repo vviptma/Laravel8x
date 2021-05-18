@@ -9,14 +9,13 @@ class Truyen extends Model
 {
     use HasFactory;
 
-    public $timestamps = false;
     protected $fillable = [
         'tentruyen',
+        'tacgia',
         'slug_truyen',
         'tomtat',
         'danhmuc_id',
         'hinhanh',
-
     ];
     protected $primaryKey = 'id';
     protected $table = 'truyen';
@@ -24,6 +23,7 @@ class Truyen extends Model
 
     public function danhmuctruyen(){
         return $this->belongsTo('App\Models\DanhmucTruyen','danhmuc_id', 'id');
+
     }
 
     public function chapter(){

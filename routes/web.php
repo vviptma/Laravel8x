@@ -23,7 +23,7 @@ use App\Http\Controllers\IndexController;
 Auth::routes();
 
 //User Page
-Route::get('/', [IndexController::class, 'home']);
+Route::get('/', [IndexController::class, 'home'])->name('index');
 
 Route::get('danhmuc/{slug_danhmuc}',[IndexController::class, 'showInfoDanhMuc']);
 

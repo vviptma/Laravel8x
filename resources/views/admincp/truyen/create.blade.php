@@ -30,6 +30,11 @@
                                        id="tendanhmuc" placeholder="Tên truyện">
                             </div>
                             <div class="form-group">
+                                <label for="tacgia">Tác giả</label>
+                                <input type="text" class="form-control" value="{{old('tacgia')}}" name="tacgia"
+                                       id="tacgia" placeholder="Tác giả">
+                            </div>
+                            <div class="form-group">
                                 <label for="slug_truyen">Slug truyện</label>
                                 <input type="text" class="form-control" value="{{old('slug_truyen')}}" name="slug_truyen"
                                        id="slug_danhmuc" placeholder="Slug Truyện">
