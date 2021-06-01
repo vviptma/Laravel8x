@@ -6,7 +6,7 @@
         <div class="row justify-content-center">
             <div class="col">
                 <div class="card">
-                    <div class="card-header">Cập nhật Danh Mục Truyện</div>
+                    <div class="card-header">Cập nhật Thể Loại</div>
                     @if ($errors->any())
                         <div class="alert alert-danger">
                             <ul>
@@ -22,30 +22,28 @@
                                 {{ session('status') }}
                             </div>
                         @endif
-                        <form method="POST" action="{{route('danhmuc.update',[$danhmuc->id])}}">
+                        <form method="POST" action="{{route('theloai.update',[$theloai->id])}}">
                             @method('PUT')
                             @csrf
                             <div class="form-group">
-                                <label for="tendanhmuc">Tên danh mục</label>
-                                <input type="text" class="form-control" value="{{$danhmuc->tendanhmuc}}"
-                                       name="tendanhmuc" id="tendanhmuc" onkeyup="ConvertNameToSlug();"
-                                       placeholder="Tên danh mục">
+                                <label for="tendanhmuc">Tên Thể Loại</label>
+                                <input type="text" class="form-control" value="{{$theloai->tentheloai}}"
+                                       name="tentheloai" id="tendanhmuc" onkeyup="ConvertNameToSlug();" placeholder="Tên thể loại">
                             </div>
+                                <div class="form-group">
+                                    <label for="slug_danhmuc">Slug thể loại</label>
+                                    <input type="text" class="form-control" value="{{$theloai->slug_theloai}}" name="slug_theloai"
+                                           id="slug_danhmuc" placeholder="Slug">
+                                </div>
                             <div class="form-group">
-                                <label for="slug_danhmuc">Slug danh mục</label>
-                                <input type="text" class="form-control" value="{{$danhmuc->slug_danhmuc}}"
-                                       name="slug_danhmuc"
-                                       id="slug_danhmuc" placeholder="Slug">
-                            </div>
-                            <div class="form-group">
-                                <label for="mota">Tóm tắt truyện</label>
-                                <textarea class="form-control" name="mota" id="mota" rows="5" style="resize: none">{{$danhmuc->mota}}</textarea>
+                                <label for="tomtat">Tóm tắt truyện</label>
+                                <textarea class="form-control" name="tomtat" id="tomtat" rows="5" style="resize: none">{{$theloai->tomtat}}</textarea>
                             </div>
                             <div class="form-group">
                                 <label for="kichhoat">Kích hoạt</label>
                                 <select name="kichhoat" class="custom-select" required>
                                     <option value="" selected>Lựa chọn...</option>
-                                    @if($danhmuc->kichhoat==0)
+                                    @if($theloai->kichhoat==0)
                                         <option selected value="0">Kích hoạt</option>
                                         <option value="1">Không kích hoạt</option>
                                     @else
@@ -54,7 +52,7 @@
                                     @endif
                                 </select>
                             </div>
-                            <button type="submit" name="capnhatdanhmuc" class="btn btn-primary">Cập nhật danh mục
+                            <button type="submit" name="capnhattheloai" class="btn btn-primary">Cập nhật Thể Loại
                             </button>
                         </form>
                     </div>

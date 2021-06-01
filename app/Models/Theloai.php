@@ -12,7 +12,7 @@ class Theloai extends Model
     protected $fillable = [
         'tentheloai',
         'slug_theloai',
-        'mota',
+        'tomtat',
         'kichhoat',
     ];
     protected $primaryKey = 'id';

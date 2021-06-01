@@ -7,6 +7,7 @@ use App\Http\Controllers\DanhmucController;
 use App\Http\Controllers\TruyenController;
 use App\Http\Controllers\ChapterController;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\TheloaiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,4 +46,6 @@ Route::group(['prefix' => 'admin'], function() {
     Route::resource('truyen', TruyenController::class, ['except' => ['show']]);
 
     Route::resource('chapter', ChapterController::class, ['except' => ['show']]);
+
+    Route::resource('theloai', TheloaiController::class, ['except' => ['show']]);
 });

@@ -6,7 +6,7 @@
         <div class="row justify-content-center">
             <div class="col">
                 <div class="card">
-                    <div class="card-header">Thêm Danh Mục Truyện</div>
+                    <div class="card-header">Thêm Truyện</div>
                     @if ($errors->any())
                         <div class="alert alert-danger">
                             <ul>
@@ -22,32 +22,31 @@
                                 {{ session('status') }}
                             </div>
                         @endif
-                        <form method="POST" action="{{route('danhmuc.store')}}">
+                        <form method="POST" action="{{route('theloai.store')}}" enctype='multipart/form-data'>
                             @csrf
                             <div class="form-group">
-                                <label for="tendanhmuc">Tên danh mục</label>
-                                <input type="text" class="form-control" value="{{old('tendanhmuc')}}" onkeyup="ConvertNameToSlug();" name="tendanhmuc"
-                                       id="tendanhmuc" placeholder="Tên danh mục">
+                                <label for="tentheloai">Tên Thể Loại</label>
+                                <input type="text" class="form-control" value="{{old('tentheloai')}}" onkeyup="ConvertNameToSlug();" name="tentheloai"
+                                       id="tendanhmuc" placeholder="Tên Thể Loại">
                             </div>
                             <div class="form-group">
-                                <label for="slug_danhmuc">Slug danh mục</label>
-                                <input type="text" class="form-control" value="{{old('slug_danhmuc')}}" name="slug_danhmuc"
-                                       id="slug_danhmuc" placeholder="Slug">
+                                <label for="slug_theloai">Slug Thể Loại</label>
+                                <input type="text" class="form-control" value="{{old('slug_theloai')}}" name="slug_theloai"
+                                       id="slug_danhmuc" placeholder="Slug Truyện">
                             </div>
                             <div class="form-group">
-                                <label for="mota">Mô tả danh mục</label>
-                                <input type="text" class="form-control" value="" name="mota" id="mota"
-                                       placeholder="Mô tả danh mục">
+                                <label for="tomtat">Tóm tắt Thể Loại</label>
+                                <textarea class="form-control" name="tomtat" id="tomtat" rows="5" style="resize: none"></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="kichhoat">Kích hoạt</label>
                                 <select name="kichhoat" class="custom-select" required>
-                                    <option value="">Lựa chọn...</option>
-                                    <option value="0" selected>Kích hoạt</option>
+                                    <option value="" selected>Lựa chọn...</option>
+                                    <option value="0">Kích hoạt</option>
                                     <option value="1">Không kích hoạt</option>
                                 </select>
                             </div>
-                            <button type="submit" name="themdanhmuc" class="btn btn-primary">Thêm danh mục</button>
+                            <button type="submit" name="themtruyen" class="btn btn-primary">Thêm truyện</button>
                         </form>
                     </div>
                 </div>
