@@ -7,6 +7,7 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
+            {{-- DANH MỤC --}}
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -24,7 +25,25 @@
                     </div>
                 </div>
             </li>
-            {{--            --}}
+            {{-- THỂ LOẠI --}}
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Thể loại
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <div class="container">
+                        <div class="row" style="width: 340px">
+                            @foreach($dstheloai as $key => $theloai)
+                                <div class="col-md-6 col-6">
+                                    <a class="text-dark" href="{{url('theloai/'.$theloai->slug_theloai)}}"><i class="fas fa-bookmark"></i> {{$theloai->tentheloai}}</a>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            </li>
+            {{-- ADMIN --}}
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -37,9 +56,9 @@
                 </div>
             </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <form class="form-inline my-2 my-lg-0" action="{{url('timkiem')}}" method="GET">
+            <input class="form-control mr-sm-2" type="search" name="search" placeholder="Nhập truyện..." aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Tìm kiếm</button>
         </form>
     </div>
 </nav>

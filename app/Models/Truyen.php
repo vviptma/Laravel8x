@@ -15,6 +15,7 @@ class Truyen extends Model
         'slug_truyen',
         'tomtat',
         'danhmuc_id',
+        'theloai_id',
         'hinhanh',
     ];
     protected $primaryKey = 'id';
@@ -28,5 +29,10 @@ class Truyen extends Model
 
     public function chapter(){
         return $this->hasMany('App\Models\Chapter');
+    }
+
+    public function theloai(){
+        return $this->belongsTo('App\Models\Theloai','theloai_id', 'id');
+
     }
 }

@@ -115,5 +115,12 @@
         document.getElementById('slug_danhmuc').value = slug;
     }
 </script>
+{{--CK Editor--}}
+<script src="//cdn.ckeditor.com/4.16.1/full/ckeditor.js"></script>
+<script type="text/javascript">
+    CKEDITOR.replace('noidung');
+    CKEDITOR.replace('tomtat');
+    CKEDITOR.replace('mota');
+</script>
 </body>
 </html>

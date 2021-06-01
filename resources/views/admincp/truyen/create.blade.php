@@ -4,7 +4,7 @@
     @include('layouts.nav')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col">
                 <div class="card">
                     <div class="card-header">Thêm Truyện</div>
                     @if ($errors->any())
@@ -53,6 +53,14 @@
                                 <select name="danhmuc" class="custom-select">
                                     @foreach($danhmuc as $key => $muc)
                                     <option value="{{$muc->id}}">{{$muc->tendanhmuc}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="theloai">Thể loại truyện</label>
+                                <select name="theloai" class="custom-select">
+                                    @foreach($dstheloai as $key => $theloai)
+                                        <option value="{{$theloai->id}}">{{$theloai->tentheloai}}</option>
                                     @endforeach
                                 </select>
                             </div>

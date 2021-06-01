@@ -4,7 +4,7 @@
     @include('layouts.nav')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col">
                 <div class="card">
                     <div class="card-header">Cập nhật chương truyện</div>
                     @if ($errors->any())
@@ -41,7 +41,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="tomtat">Tóm tắt truyện</label>
-                                <textarea class="form-control" name="tomtat" id="tomtat" rows="5">{{$chapter->tomtat}}</textarea>
+                                <textarea class="form-control" name="tomtat" id="tomtat" rows="5">{!! $chapter->tomtat !!}</textarea>
                             </div>
                             <div class="form-group">
                                 <label for="truyen_id">Thuộc truyện</label>

@@ -30,6 +30,7 @@
                                 <th scope="col">Tên truyện</th>
                                 <th scope="col">Tác giả</th>
                                 <th scope="col">Danh mục</th>
+                                <th scope="col">Thể loại</th>
                                 <th scope="col">Kích hoạt</th>
                                 <th scope="col">Updated At</th>
                                 <th scope="col">Chức năng</th>
@@ -46,6 +47,9 @@
 
                                     {{--Hiển thị id danh mục--}}
                                     <td>{{$truyen->danhmuctruyen->tendanhmuc}}</td>
+
+                                    {{--Hiển thị ds thể loại--}}
+                                    <td>{{$truyen->theloai->tentheloai}}</td>
 
 
                                     <td>@if($truyen->kichhoat==0)

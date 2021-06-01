@@ -25,11 +25,15 @@ Auth::routes();
 //User Page
 Route::get('/', [IndexController::class, 'home'])->name('index');
 
-Route::get('danhmuc/{slug_danhmuc}',[IndexController::class, 'showInfoDanhMuc']);
+Route::get('/danhmuc/{slug_danhmuc}',[IndexController::class, 'showInfoDanhMuc']);
 
-Route::get('truyen/{slug_truyen}',[IndexController::class, 'showInfoTruyen']);
+Route::get('/theloai/{slug_theloai}',[IndexController::class, 'showInfoTheLoai']);
 
-Route::get('chapter/{slug_chapter}',[IndexController::class, 'showInfoChapter']);
+Route::get('/truyen/{slug_truyen}',[IndexController::class, 'showInfoTruyen']);
+
+Route::get('/chapter/{slug_chapter}',[IndexController::class, 'showInfoChapter']);
+
+Route::get('/timkiem',[IndexController::class, 'showTimKiem']);
 
 
 //Group Admin

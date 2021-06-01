@@ -44,8 +44,8 @@
                                     <th scope="row">{{$key}}</th>
                                     <td>{{$chapter->tieude}}</td>
                                     <td>{{$chapter->slug_chapter}}</td>
-                                    <td>{{$chapter->tomtat}}</td>
-                                    <td>{{$chapter->noidung}}</td>
+                                    <td>{!! \Illuminate\Support\Str::limit($chapter->tomtat, 100, $end='...') !!}</td>
+                                    <td>{!! \Illuminate\Support\Str::limit($chapter->noidung, 100, $end='...') !!}</td>
                                     {{--Hiển thị danh sách truyện--}}
                                     <td>{{$chapter->danhsachtruyen->tentruyen}}</td>
                                     <td>@if($chapter->kichhoat==0)

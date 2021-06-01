@@ -69,3 +69,35 @@
         </div>
     </div>
 </footer>
+<!-- Get app.js to add Boostrap -->
+<script src="{{ asset('js/app.js') }}" defer></script>
+
+<!-- https://cdnjs.com/libraries/jquery/3.5.0 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+
+<!-- https://owlcarousel2.github.io/OwlCarousel2/ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+{{--Js control slide--}}
+<script type=text/javascript>
+    $('.owl-carousel').owlCarousel({
+        autoplay:true,
+        autoplayTimeout: 1000,
+        autoplayHoverPause:false,
+        loop: true,
+        dots: false,
+        nav: false,
+        margin: 15,
+        responsive: {
+            0: {
+                items: 2
+            },
+            600: {
+                items: 2
+            },
+            1000: {
+                items: 3
+            }
+        }
+    })
+</script>

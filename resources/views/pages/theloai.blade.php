@@ -12,14 +12,14 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{route('index')}}">Trang chủ</a></li>
-            <li class="breadcrumb-item active text-success">{{$info_danhmuc->tendanhmuc}}
+            <li class="breadcrumb-item active text-success">{{$info_theloai->tentheloai}}
             </li>
         </ol>
     </nav>
 
     {{--Cardbox--}}
     <div class="card mb-3">
-        <div class="card-header">{{$info_danhmuc->tendanhmuc}}</div>
+        <div class="card-header">{{$info_theloai->tentheloai}}</div>
         <div class="card-body">
             @foreach($dstruyen as $key => $truyen)
                 <ul class="list-unstyled">
