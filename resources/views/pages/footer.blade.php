@@ -101,3 +101,35 @@
         }
     })
 </script>
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        $('#search').keyup(function (){
+            var tukhoa = $(this).val();
+            if(tukhoa != ''){
+                var _token = $('input[name="_token"]').val();
+                $.ajax({
+
+                    url:"{{url('/timkiemajax')}}",
+                    method:"POST",
+                    data:{tukhoa:tukhoa, _token:_token},
+
+                    success:function (data){
+                        $('#timkiem_ajax').fadeIn();
+                        $('#timkiem_ajax').html(data);
+                    }
+
+                });
+            }else {
+                $('#timkiem_ajax').fadeOut();
+            }
+        })
+
+    });
+
+    // $(document).on('click','.li_timkiem_ajax',function (){
+    //    $('#search').val($(this).text());
+    //    $('#timkiem_ajax').fadeOut();
+    // });
+
+</script>

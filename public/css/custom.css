@@ -74,3 +74,12 @@ i.fa, i.fas {
     }
 }
 
+ul.dropdown-menu li a{
+    text-transform: uppercase;
+    color: #000000;
+}
+#timkiem_ajax ul.dropdown-menu {
+    left: unset;
+    right: 0;
+    width: 310px;
+}

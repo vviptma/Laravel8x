@@ -34,7 +34,9 @@ Route::get('/truyen/{slug_truyen}',[IndexController::class, 'showInfoTruyen']);
 
 Route::get('/chapter/{slug_chapter}',[IndexController::class, 'showInfoChapter']);
 
-Route::get('/timkiem',[IndexController::class, 'showTimKiem']);
+Route::post('/timkiem',[IndexController::class, 'showTimKiem']);
+
+Route::post('/timkiemajax',[IndexController::class, 'timkiemajax']);
 
 
 //Group Admin
