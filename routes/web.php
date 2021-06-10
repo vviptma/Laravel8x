@@ -34,12 +34,16 @@ Route::get('/truyen/{slug_truyen}',[IndexController::class, 'showInfoTruyen']);
 
 Route::get('/chapter/{slug_chapter}',[IndexController::class, 'showInfoChapter']);
 
+Route::get('/tag/{tag}',[IndexController::class, 'tag']);
+
 Route::post('/timkiem',[IndexController::class, 'showTimKiem']);
 
 Route::post('/timkiemajax',[IndexController::class, 'timkiemajax']);
 
 
+
 //Group Admin
+Route::group(['middleware' => ['web', 'auth']], function () {
 Route::group(['prefix' => 'admin'], function() {
     Route::get('/', [AdminController::class, 'index'])->name('admin');
 
@@ -50,4 +54,5 @@ Route::group(['prefix' => 'admin'], function() {
     Route::resource('chapter', ChapterController::class, ['except' => ['show']]);
 
     Route::resource('theloai', TheloaiController::class, ['except' => ['show']]);
+});
 });

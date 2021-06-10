@@ -31,6 +31,11 @@
                                        id="tendanhmuc" placeholder="Tên truyện">
                             </div>
                             <div class="form-group">
+                                <label for="tags">Tên truyện</label>
+                                <input type="text" class="form-control" value="{{$truyen->tags}}" name="tags"
+                                       id="tags" placeholder="Tags">
+                            </div>
+                            <div class="form-group">
                                 <label for="tacgia">Tác giả</label>
                                 <input type="text" class="form-control" value="{{$truyen->tacgia}}" name="tacgia"
                                        id="tacgia" placeholder="Tác giả">

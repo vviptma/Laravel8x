@@ -29,9 +29,11 @@
                                 <th scope="col">Hình ảnh</th>
                                 <th scope="col">Tên truyện</th>
                                 <th scope="col">Tác giả</th>
+                                <th scope="col">Tags</th>
                                 <th scope="col">Danh mục</th>
                                 <th scope="col">Thể loại</th>
                                 <th scope="col">Kích hoạt</th>
+                                <th scope="col">Created At</th>
                                 <th scope="col">Updated At</th>
                                 <th scope="col">Chức năng</th>
                                 <th scope="col">Chức năng</th>
@@ -44,6 +46,7 @@
                                     <td><img src="{{asset('public/uploads/truyen/'.$truyen->hinhanh)}}" height="150" width="auto"></td>
                                     <td>{{$truyen->tentruyen}}</td>
                                     <td>{{$truyen->tacgia}}</td>
+                                    <td>{{$truyen->tags}}</td>
 
                                     {{--Hiển thị id danh mục--}}
                                     <td>{{$truyen->danhmuctruyen->tendanhmuc}}</td>
@@ -58,7 +61,8 @@
                                             <span class="text text-danger">Không Kích hoạt</span>
                                         @endif
                                     </td>
-                                    <td><small>{{$truyen->updated_at}}</small></td>
+                                    <td><small>{{$truyen->created_at}}<br>{{$truyen->created_at->diffForHumans()}}</small></td>
+                                    <td><small>{{$truyen->updated_at}}<br>{{$truyen->updated_at->diffForHumans()}}</small></td>
                                     <td>
                                         <a href="{{route('truyen.edit',[$truyen->id])}}" class="btn btn-primary">Edit</a>
                                     </td>

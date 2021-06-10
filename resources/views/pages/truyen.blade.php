@@ -57,7 +57,9 @@
                                     <p class="list-group-item"><i class="fa fa-eye"></i><span>Lượt xem: </span></p>
                                     <p class="list-group-item"><i class="fa fa-star"></i><span>Tình trạng: </span></p>
                                     <p class="list-group-item"><i
-                                            class="fas fa-sync-alt"></i><span>{{$info_truyen->updated_at}}</span></p>
+                                            class="fas fa-sync-alt"></i><span>Ngày đăng: {{$info_truyen->created_at->diffForHumans()}}</span></p>
+                                    <p class="list-group-item"><i
+                                            class="fas fa-sync-alt"></i><span>Cập nhật: {{$info_truyen->updated_at->diffForHumans()}}</span></p>
                                 </ul>
                             </div>
                         </div>
@@ -75,10 +77,26 @@
                                     <li class="list-group-item text-center">
                                         @if(!empty($first_chapter))
                                             <a class="btn btn-success"
-                                               href="{{url('chapter/'.$first_chapter->slug_chapter)}}">Đọc ngay</a>
+                                               href="{{url('chapter/'.$first_chapter->slug_chapter)}}">Đọc từ đầu <i class="text-danger fas fa-play"></i></a>
                                         @else
-                                            <span class="text-danger"><i class="fas fa-battery-empty"></i> Chưa cập nhật</span>
+                                            <span class="text-danger"><i class="fas fa-battery-empty"></i>Chưa cập nhật</span>
                                         @endif
+                                        @if(!empty($lasted_chapter))
+                                            <a class="btn btn-success"
+                                               href="{{url('chapter/'.$lasted_chapter->slug_chapter)}}">Đọc chương mới nhất <i class="text-danger fab fa-hotjar"></i></a>
+                                        @endif
+                                    </li>
+                                    <li class="list-group-item text-center">
+                                        {{--SHARE BUTTON FACEBOOK --}}
+                                        <div class="text-center m-2">
+                                            <div class="fb-share-button" data-href="{{\URL::current()}}"
+                                                 data-layout="button" data-size="large">
+                                                <a target="_blank"
+                                                   href="https://www.facebook.com/sharer/sharer.php?u={{\URL::current()}}&amp;src=sdkpreparse"
+                                                   class="fb-xfbml-parse-ignore">Chia sẻ</a></div>
+
+                                        </div>
+                                        {{--END SHARE BUTTON FACEBOOK --}}
                                     </li>
                                     <li class="list-group-item">
                                         <div class="description">
@@ -90,6 +108,25 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            {{--TAGS--}}
+            <div class="card mb-3">
+                <div class="card-header"><h5 class="text-uppercase"><i class="fas fa-list-ol"></i>
+                        <span>THẺ TAGS CỦA {{$info_truyen->tentruyen}}</span></h5></div>
+                @php
+                    $tags = explode(",",$info_truyen->tags);
+                @endphp
+                @if($tags)
+                    <div class="tagcloud05 m-3">
+                        <ul>
+                            @foreach($tags as $key => $tag)
+                                <li><a href="{{url('tag/'.Str::slug($tag))}}"><span>{{$tag}}</span></a></li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @else
+
+                @endif
             </div>
             {{--5 CHƯƠNG MỚI NHẤT TRUYỆN--}}
             <div class="card mb-3">
@@ -198,14 +235,20 @@
                     </h5>
                 </div>
                 <div class="card-body">
-                    <div id="fb-root"></div>
-                    <script async defer crossorigin="anonymous"
-                            src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v10.0"
-                            nonce="w0jhgg7T"></script>
-                    <div class="fb-comments" data-href="https://webtruyen.com/cuu-tinh-ba-the-quyet/" data-width="100%"
+                    <div class="fb-comments" data-href="{{\URL::current()}}" data-width="100%"
                          data-numposts="5"></div>
                 </div>
             </div>
+            {{--SHARE BUTTON FACEBOOK --}}
+            <div class="text-center m-2">
+                <div class="fb-share-button" data-href="{{\URL::current()}}"
+                     data-layout="button" data-size="large">
+                    <a target="_blank"
+                       href="https://www.facebook.com/sharer/sharer.php?u={{\URL::current()}}&amp;src=sdkpreparse"
+                       class="fb-xfbml-parse-ignore">Chia sẻ</a></div>
+
+            </div>
+            {{--END SHARE BUTTON FACEBOOK --}}
         </div>
         <div class="col-sm-4">
             @include('pages.sidebar')

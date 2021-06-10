@@ -45,9 +45,10 @@ class IndexController extends Controller
         $info_truyen = Truyen::with('danhmuctruyen')->where('slug_truyen', $slug_truyen)->where('kichhoat', 0)->first();
         $dsnewchapter = Chapter::with('danhsachtruyen')->orderBy('id', 'DESC')->where('truyen_id', $info_truyen->id)->where('kichhoat', 0)->limit(5)->get();
         $first_chapter = Chapter::with('danhsachtruyen')->orderBy('id', 'ASC')->where('truyen_id', $info_truyen->id)->where('kichhoat', 0)->first();
+        $lasted_chapter = Chapter::with('danhsachtruyen')->orderBy('id', 'DESC')->where('truyen_id', $info_truyen->id)->where('kichhoat', 0)->first();
         $dsallchapter = Chapter::with('danhsachtruyen')->orderBy('id', 'ASC')->where('truyen_id', $info_truyen->id)->where('kichhoat', 0)->simplePaginate(2);
         $cungdanhmuc = Truyen::with('danhmuctruyen')->where('danhmuc_id', $info_truyen->danhmuctruyen->id)->whereNotIn('id', [$info_truyen->id])->get();
-        return view('pages.truyen')->with(compact('dsdanhmuc', 'dsnewchapter', 'info_truyen', 'dsallchapter', 'cungdanhmuc', 'first_chapter', 'dstheloai'));
+        return view('pages.truyen')->with(compact('dsdanhmuc', 'dsnewchapter', 'info_truyen', 'dsallchapter', 'cungdanhmuc', 'first_chapter', 'dstheloai','lasted_chapter'));
     }
 
     public function showInfoChapter($slug_chapter)
@@ -91,7 +92,8 @@ class IndexController extends Controller
             <ul class="dropdown-menu" style="display: block">
                 <?php foreach ($dstruyen as $key => $truyen) : ?>
                     <li class="li_timkiem_ajax">
-                        <a href="<?php echo(asset('/truyen/' . $truyen->slug_truyen)); ?>" title="" type="button" class="list-group-item list-group-item-action text-dark">
+                        <a href="<?php echo(asset('/truyen/' . $truyen->slug_truyen)); ?>" title="" type="button"
+                           class="list-group-item list-group-item-action text-dark">
                             <img class="mr-2" src="<?php echo(asset('public/uploads/truyen/' . $truyen->hinhanh)); ?>"
                                  height="auto"
                                  width="50" alt="">
@@ -104,34 +106,33 @@ class IndexController extends Controller
             <ul class="dropdown-menu" style="display: block">
                 <li><span class="text-danger m-3">Không có kết quả tìm kiếm</span></li>
             </ul>
-        <?php endif; ?>
+        <?php endif; ?><?php
+    }
 
-        <?php
+    public function tag($tag)
+    {
+        //SEO
+        //$info = Info::find(1);
+        $title = 'Tìm kiếm tags';
+        $tags = 'Tìm kiếm tags';
+        $meta_desc = 'Tìm kiếm tags';
+        $meta_keywords = 'Tìm kiếm tags';
+        $url_canonical = \URL::current();
+        //$og_image = url('public/uploads/logo/'.$info->logo);
+        //$link_icon = url('public/uploads/logo/'.$info->logo);
+        //END SEO
+        $slide_truyen = Truyen::with('danhmuctruyen', 'theloai')->orderBy('id', 'DESC')->where('kichhoat', '0')->take(8)->get();
+        $dstheloai = Theloai::orderBy('id', 'DESC')->where('kichhoat', 0)->get();
+        $dsdanhmuc = DanhmucTruyen::orderBy('id', 'DESC')->where('kichhoat', 0)->get();
+        $tags = explode("-", $tag);
+
+        $dstruyen = Truyen::with('danhmuctruyen', 'theloai')->where(
+            function ($query) use ($tags) {
+                for ($i = 0; $i < count($tags); $i++) {
+                    $query->orwhere('tags', 'LIKE', '%' . $tags[$i] . '%');
+                }
+            })->get();
+
+        return view('pages.tag')->with(compact('dstruyen', 'dstheloai', 'dsdanhmuc', 'slide_truyen', 'url_canonical', 'meta_keywords', 'tags', 'meta_desc', 'title', 'tag'));
     }
 }
-
-
-
-
-//            if ($count != 0) {
-//                $output = '
-//            <ul class="dropdown-menu" style="display: block">
-//            ';
-//                foreach ($dstruyen as $key => $truyen) {
-//                    $output .= '
-//                <li class="li_timkiem_ajax"><a href="\\truyen/'.$truyen->slug_truyen.'">' . $truyen->tentruyen . '</a></li>
-//                ';
-//                }
-//                $output .= '</ul>';
-//                echo $output;
-//            }else{
-//                $output = '
-//            <ul class="dropdown-menu" style="display: block">
-//            ';
-//
-//                    $output .= '
-//                <li class="">Không có truyện nào</li>
-//                ';
-//                }
-//                $output .= '</ul>';
-//                echo $output;

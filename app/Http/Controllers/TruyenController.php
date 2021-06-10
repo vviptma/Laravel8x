@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\DanhmucTruyen;
 use App\Models\Truyen;
 use App\Models\Theloai;
+use Carbon\Carbon;
 
 class TruyenController extends Controller
 {
@@ -46,6 +47,7 @@ class TruyenController extends Controller
             [
                 'tentruyen' => 'required|unique:truyen|max:255',
                 'tacgia' => 'required|max:200',
+                'tags' => 'required|max:255',
                 'slug_truyen' => 'required|unique:truyen|max:255',
                 'hinhanh' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048|dimensions:min_width=100,min_height=100,max_width=1000,max_height=1000',
                 'tomtat' => 'required',
@@ -57,6 +59,7 @@ class TruyenController extends Controller
                 'tentruyen.unique' => 'Tên truyện đã có, xin điền tên khác',
                 'tentruyen.required' => 'Chưa điền tên truyện',
                 'tacgia.required' => 'Chưa điền tác giả',
+                'tags.required' => 'Chưa điền các thẻ tags',
                 'slug_truyen.unique' => 'Hãy điền slug truyện khác',
                 'slug_truyen.required' => 'Chưa điền slug truyện',
                 'tomtat.required' => 'Chưa điền tóm tắt truyện',
@@ -67,11 +70,14 @@ class TruyenController extends Controller
         $truyen = new Truyen();
         $truyen->tentruyen = $data['tentruyen'];
         $truyen->tacgia = $data['tacgia'];
+        $truyen->tags = $data['tags'];
         $truyen->slug_truyen = $data['slug_truyen'];
         $truyen->tomtat = $data['tomtat'];
         $truyen->danhmuc_id = $data['danhmuc'];
         $truyen->theloai_id = $data['theloai'];
         $truyen->kichhoat = $data['kichhoat'];
+
+        $truyen->created_at = Carbon::now(env('APP_TIMEZONE', 'UTC'));
 
         //Xử lý thêm hình ảnh vào folder
         $path = 'public/uploads/truyen/';
@@ -134,6 +140,7 @@ class TruyenController extends Controller
             [
                 'tentruyen' => 'required|max:255',
                 'tacgia' => 'required|max:200',
+                'tags' => 'required|max:255',
                 'slug_truyen' => 'required|max:255',
                 'tomtat' => 'required',
                 'danhmuc' =>'required',
@@ -143,6 +150,7 @@ class TruyenController extends Controller
             [
                 'tentruyen.required' => 'Chưa điền tên truyện',
                 'tacgia.required' => 'Chưa điền tên tác giả',
+                'tags.required' => 'Chưa điền các thẻ tags',
                 'slug_truyen.required' => 'Chưa điền slug truyện',
                 'tomtat.required' => 'Chưa điền tóm tắt truyện',
             ]
@@ -151,6 +159,7 @@ class TruyenController extends Controller
         $truyen = Truyen::find($id);
         $truyen->tentruyen = $data['tentruyen'];
         $truyen->tacgia = $data['tacgia'];
+        $truyen->tags = $data['tags'];
         $truyen->slug_truyen = $data['slug_truyen'];
         $truyen->tomtat = $data['tomtat'];
         $truyen->danhmuc_id = $data['danhmuc'];

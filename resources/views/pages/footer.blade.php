@@ -133,3 +133,7 @@
     // });
 
 </script>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v10.0&appId=585615179018090&autoLogAppEvents=1"
+        nonce="XP3iv2Sq"></script>

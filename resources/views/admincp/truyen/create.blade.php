@@ -35,6 +35,11 @@
                                        id="tacgia" placeholder="Tác giả">
                             </div>
                             <div class="form-group">
+                                <label for="tags">Các thẻ tags</label>
+                                <input type="text" class="form-control" value="{{old('tags')}}" name="tags"
+                                       id="tags" placeholder="tag,tag,tag...">
+                            </div>
+                            <div class="form-group">
                                 <label for="slug_truyen">Slug truyện</label>
                                 <input type="text" class="form-control" value="{{old('slug_truyen')}}" name="slug_truyen"
                                        id="slug_danhmuc" placeholder="Slug Truyện">
