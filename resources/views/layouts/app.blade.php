@@ -120,7 +120,6 @@
 <script type="text/javascript">
     CKEDITOR.replace('noidung');
     CKEDITOR.replace('tomtat');
-    CKEDITOR.replace('mota');
 </script>
 </body>
 </html>

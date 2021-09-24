@@ -36,7 +36,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="mota">Mô tả danh mục</label>
-                                <input type="text" class="form-control" value="" name="mota" id="mota"
+                                <input type="text" class="form-control" value="Danh sách truyện chữ được cập nhật (vừa ra mắt, thêm chương mới, sửa nội dung,..) gần đây." name="mota" id="mota"
                                        placeholder="Mô tả danh mục">
                             </div>
                             <div class="form-group">

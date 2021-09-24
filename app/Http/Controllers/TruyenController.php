@@ -64,6 +64,8 @@ class TruyenController extends Controller
                 'slug_truyen.required' => 'Chưa điền slug truyện',
                 'tomtat.required' => 'Chưa điền tóm tắt truyện',
                 'hinhanh.required' => 'Chưa chọn hình ảnh truyện',
+                'theloai.required' => 'Chưa chọn thể loại truyện',
+                'danhmuc.required' => 'Chưa chọn danh mục truyện',
             ]
         );
         //Đưa dữ liệu từ request form vào Models

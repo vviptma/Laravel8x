@@ -40,7 +40,7 @@ class DanhmucController extends Controller
             [
                 'tendanhmuc' => 'required|unique:danhmuc|max:255',
                 'slug_danhmuc' => 'required|unique:danhmuc|max:255',
-                'mota' => 'required|max:255',
+                'mota' => 'required',
                 'kichhoat' => 'required'
             ],
             [

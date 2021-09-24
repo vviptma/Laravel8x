@@ -33,7 +33,7 @@
         <div class="card-body">
             <ul class="list-unstyled">
                 <li class="media">
-                    <img src="http://laravel-webtruyen.test/public/uploads/truyen/conan91.jpg" class="mr-3" alt="..."
+                    <img src="http://laravel8x.test/public/uploads/truyen/conan91.jpg" class="mr-3" alt="..."
                          width="50" height="50">
                     <div class="media-body">
                         <h5 class="mt-0 mb-1">Conan tập 1</h5>
@@ -41,7 +41,7 @@
                     </div>
                 </li>
                 <li class="media">
-                    <img src="http://laravel-webtruyen.test/public/uploads/truyen/conan91.jpg" class="mr-3" alt="..."
+                    <img src="http://laravel8x.test/public/uploads/truyen/conan91.jpg" class="mr-3" alt="..."
                          width="50" height="50">
                     <div class="media-body">
                         <h5 class="mt-0 mb-1">Conan tập 2</h5>
@@ -49,7 +49,7 @@
                     </div>
                 </li>
                 <li class="media">
-                    <img src="http://laravel-webtruyen.test/public/uploads/truyen/conan91.jpg" class="mr-3" alt="..."
+                    <img src="http://laravel8x.test/public/uploads/truyen/conan91.jpg" class="mr-3" alt="..."
                          width="50" height="50">
                     <div class="media-body">
                         <h5 class="mt-0 mb-1">Conan tập 3</h5>
@@ -68,7 +68,7 @@
         <div class="card-body">
             <ul class="list-unstyled">
                 <li class="media">
-                    <img src="http://laravel-webtruyen.test/public/uploads/truyen/conan91.jpg" class="mr-3" alt="..."
+                    <img src="http://laravel8x.test/public/uploads/truyen/conan91.jpg" class="mr-3" alt="..."
                          width="50" height="50">
                     <div class="media-body">
                         <h5 class="mt-0 mb-1">Conan tập 1</h5>
@@ -76,7 +76,7 @@
                     </div>
                 </li>
                 <li class="media">
-                    <img src="http://laravel-webtruyen.test/public/uploads/truyen/conan91.jpg" class="mr-3" alt="..."
+                    <img src="http://laravel8x.test/public/uploads/truyen/conan91.jpg" class="mr-3" alt="..."
                          width="50" height="50">
                     <div class="media-body">
                         <h5 class="mt-0 mb-1">Conan tập 2</h5>
@@ -84,7 +84,7 @@
                     </div>
                 </li>
                 <li class="media">
-                    <img src="http://laravel-webtruyen.test/public/uploads/truyen/conan91.jpg" class="mr-3" alt="..."
+                    <img src="http://laravel8x.test/public/uploads/truyen/conan91.jpg" class="mr-3" alt="..."
                          width="50" height="50">
                     <div class="media-body">
                         <h5 class="mt-0 mb-1">Conan tập 3</h5>
@@ -101,7 +101,7 @@
         <div class="card-body">
             <ul class="list-unstyled">
                 <li class="media">
-                    <img src="http://laravel-webtruyen.test/public/uploads/truyen/conan91.jpg" class="mr-3" alt="..."
+                    <img src="http://laravel8x.test/public/uploads/truyen/conan91.jpg" class="mr-3" alt="..."
                          width="50" height="50">
                     <div class="media-body">
                         <h5 class="mt-0 mb-1">Conan tập 1</h5>
@@ -109,7 +109,7 @@
                     </div>
                 </li>
                 <li class="media">
-                    <img src="http://laravel-webtruyen.test/public/uploads/truyen/conan91.jpg" class="mr-3" alt="..."
+                    <img src="http://laravel8x.test/public/uploads/truyen/conan91.jpg" class="mr-3" alt="..."
                          width="50" height="50">
                     <div class="media-body">
                         <h5 class="mt-0 mb-1">Conan tập 2</h5>
@@ -117,7 +117,7 @@
                     </div>
                 </li>
                 <li class="media">
-                    <img src="http://laravel-webtruyen.test/public/uploads/truyen/conan91.jpg" class="mr-3" alt="..."
+                    <img src="http://laravel8x.test/public/uploads/truyen/conan91.jpg" class="mr-3" alt="..."
                          width="50" height="50">
                     <div class="media-body">
                         <h5 class="mt-0 mb-1">Conan tập 3</h5>
@@ -134,7 +134,7 @@
         <div class="card-body">
             <ul class="list-unstyled">
                 <li class="media">
-                    <img src="http://laravel-webtruyen.test/public/uploads/truyen/conan91.jpg" class="mr-3" alt="..."
+                    <img src="http://laravel8x.test/public/uploads/truyen/conan91.jpg" class="mr-3" alt="..."
                          width="50" height="50">
                     <div class="media-body">
                         <h5 class="mt-0 mb-1">Conan tập 1</h5>
@@ -142,7 +142,7 @@
                     </div>
                 </li>
                 <li class="media">
-                    <img src="http://laravel-webtruyen.test/public/uploads/truyen/conan91.jpg" class="mr-3" alt="..."
+                    <img src="http://laravel8x.test/public/uploads/truyen/conan91.jpg" class="mr-3" alt="..."
                          width="50" height="50">
                     <div class="media-body">
                         <h5 class="mt-0 mb-1">Conan tập 2</h5>
@@ -150,7 +150,7 @@
                     </div>
                 </li>
                 <li class="media">
-                    <img src="http://laravel-webtruyen.test/public/uploads/truyen/conan91.jpg" class="mr-3" alt="..."
+                    <img src="http://laravel8x.test/public/uploads/truyen/conan91.jpg" class="mr-3" alt="..."
                          width="50" height="50">
                     <div class="media-body">
                         <h5 class="mt-0 mb-1">Conan tập 3</h5>
